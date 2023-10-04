@@ -1,0 +1,8 @@
+name: Local Microservice Development Dependencies
+rating: 5
+imageUrl: https://github.com/msa-ez/topping-spring-security/assets/123912988/0a910647-98f8-4e7d-b0c8-7a40e223dead
+description: Local Microservice Development Dependencies including Kafka, Mockservers, API Gateway. 
+tags:
+  - Mock
+  - Kafka
+  - API
