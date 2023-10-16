@@ -1,5 +1,5 @@
 forEach: Relation
-fileName: {{target.aggregate.nameCamelCase}}-open-api.yaml
+fileName: openapi.yaml
 except: {{contexts.except}}
 ifDuplicated: merge
 ---
