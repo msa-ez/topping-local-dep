@@ -25,7 +25,7 @@ paths:
             {{#when}}
                 value:
                 {{#each value}}
-                  {{@key}}:{{this}}
+                  {{@key}}: {{this}}
                 {{/each}}
             {{/when}}
             {{/examples}}      
@@ -41,7 +41,7 @@ paths:
               {{#then}}
                   value:
                   {{#each value}}
-                    {{@key}}:{{this}}
+                    {{@key}}: {{this}}
                   {{/each}}
               {{/then}}
               {{/examples}}      
