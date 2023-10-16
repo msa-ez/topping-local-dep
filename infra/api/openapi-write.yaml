@@ -19,6 +19,14 @@ paths:
                   description: {{name}} of this {{../namePascalCase}}
                   type: {{map @root.contexts.mappings className}}
               {{/fieldDescriptors}}
+            examples:
+            {{examples}}
+            {{when}}
+              Jessica:   # Example 1
+                value:
+                  {{value}}
+            {{/when}}
+            {{/examples}}      
       responses:
         "200":
           content:
