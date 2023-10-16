@@ -53,16 +53,6 @@ paths:
                   {{name}}: {{map @root.contexts.examples className}}
                 {{/aggregateRoot.fieldDescriptors}}
         required: true
-      parameters:
-      - examples:
-          1:
-            value: 1
-        name: {{aggregateRoot.keyFieldDescriptor.nameCamelCase}}
-        description: {{namePascalCase}} name
-        schema:
-          type: {{map @root.contexts.mappings aggregateRoot.keyFieldDescriptor.className}}
-        in: path
-        required: true
       responses:
         "200":
           content:

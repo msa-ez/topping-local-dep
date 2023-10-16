@@ -21,7 +21,7 @@ paths:
               {{/fieldDescriptors}}
             examples:
             {{#examples}}
-              {{@index}}:   
+              Example {{@index}}:   
             {{#when}}
                 value:
                 {{#each value}}
@@ -29,6 +29,16 @@ paths:
                 {{/each}}
             {{/when}}
             {{/examples}}      
+      parameters:
+      - examples:
+          1:
+            value: 1
+        name: id
+        description: {{namePascalCase}} name
+        schema:
+          type: {{map @root.contexts.mappings aggregate.aggregateRoot.keyFieldDescriptor.className}}
+        in: path
+        required: true
       responses:
         "200":
           content:
@@ -37,7 +47,7 @@ paths:
                 $ref: '#/components/schemas/{{aggregate.namePascalCase}}'
               examples:
               {{#examples}}
-                {{@index}}: 
+                Example {{@index}}: 
               {{#then}}
                   value:
                   {{#each value}}
