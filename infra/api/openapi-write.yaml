@@ -20,9 +20,9 @@ paths:
                   type: {{map @root.contexts.mappings className}}
               {{/fieldDescriptors}}
             examples:
-            {{examples}}
+            {{#examples}}
             {{when}}
-              Jessica:   # Example 1
+              {{@index}}:   
                 value:
                   {{value}}
             {{/when}}
@@ -34,11 +34,20 @@ paths:
               schema:
                 $ref: '#/components/schemas/{{aggregate.namePascalCase}}'
               examples:
+              {{#examples}}
+              {{then}}
+                {{@index}}:   # Example 1
+                  value:
+                    {{value}}
+              {{/then}}
+              {{/examples}}      
+              {{^examples}}
                 1:
                   value:
                   {{#aggregate.aggregateRoot.fieldDescriptors}}
                     {{name}}: {{map @root.contexts.examples className}}
                   {{/aggregate.aggregateRoot.fieldDescriptors}}
+              {{/examples}}
           description: {{namePascalCase}} Operation
       operationId: {{namePascalCase}}
       summary: {{namePascalCase}}
