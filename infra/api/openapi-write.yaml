@@ -7,7 +7,7 @@ paths:
 {{#contexts.command}}
   /{{aggregate.namePlural}}/{id}/{{controllerInfo.apiPath}}:
     summary: {{name}} operation on {{aggregate.namePlural}}
-    get:
+    {{url controllerInfo.method}}:
       parameters:
       {{#fieldDescriptors}}
       - name: {{nameCamelCase}}
