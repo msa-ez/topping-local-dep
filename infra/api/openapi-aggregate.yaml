@@ -40,14 +40,14 @@ paths:
           description: Get list of {{namePlural}}
       operationId: Get{{namePascalCase}}
       summary: Get list of {{namePlural}}
-  /{{namePlural}}/{{wrap aggregateRoot.keyFieldDescriptor.name}}:
+  /{{namePlural}}/{id}:
     summary: Specific operation on {{namePlural}}
     get:
       parameters:
       - examples:
           {{map @root.contexts.examples aggregateRoot.keyFieldDescriptor.className}}:
             value: {{map @root.contexts.examples aggregateRoot.keyFieldDescriptor.className}}
-        name: {{aggregateRoot.keyFieldDescriptor.nameCamelCase}}
+        name: id
         description: {{namePascalCase}} name
         schema:
           type: {{map @root.contexts.mappings aggregateRoot.keyFieldDescriptor.className}}
