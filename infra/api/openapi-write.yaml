@@ -8,15 +8,17 @@ paths:
   /{{aggregate.namePlural}}/{id}/{{controllerInfo.apiPath}}:
     summary: {{name}} operation on {{aggregate.namePlural}}
     {{url controllerInfo.method}}:
-      parameters:
-      {{#fieldDescriptors}}
-      - name: {{nameCamelCase}}
-        description: {{namePascalCase}}
-        schema:
-          type: {{map @root.contexts.mappings className}}
-        in: query
-        required: false
-      {{/fieldDescriptors}}
+      requestBody:
+        content:
+          application/json:
+            schema:      # Request body contents
+              type: object
+              properties:
+              {{#fieldDescriptors}}
+                {{name}}:
+                  description: {{name}} of this {{../namePascalCase}}
+                  type: {{map @root.contexts.mappings className}}
+              {{/fieldDescriptors}}
       responses:
         "200":
           content:
