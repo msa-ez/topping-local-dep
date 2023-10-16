@@ -21,10 +21,12 @@ paths:
               {{/fieldDescriptors}}
             examples:
             {{#examples}}
-            {{#when}}
               {{@index}}:   
+            {{#when}}
                 value:
-                  {{value}}
+                {{#each value}}
+                  {{@key}}:{{this}}
+                {{/each}}
             {{/when}}
             {{/examples}}      
       responses:
@@ -35,10 +37,12 @@ paths:
                 $ref: '#/components/schemas/{{aggregate.namePascalCase}}'
               examples:
               {{#examples}}
+                {{@index}}: 
               {{#then}}
-                {{@index}}:   # Example 1
                   value:
-                    {{value}}
+                  {{#each value}}
+                    {{@key}}:{{this}}
+                  {{/each}}
               {{/then}}
               {{/examples}}      
               {{^examples}}
