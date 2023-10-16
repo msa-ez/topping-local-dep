@@ -40,6 +40,44 @@ paths:
           description: Get list of {{namePlural}}
       operationId: Get{{namePascalCase}}
       summary: Get list of {{namePlural}}
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/{{namePascalCase}}'
+            examples:
+              1:
+                value:
+                {{#aggregateRoot.fieldDescriptors}}
+                  {{name}}: {{map @root.contexts.examples className}}
+                {{/aggregateRoot.fieldDescriptors}}
+        required: true
+      parameters:
+      - examples:
+          1:
+            value: 1
+        name: {{aggregateRoot.keyFieldDescriptor.nameCamelCase}}
+        description: {{namePascalCase}} name
+        schema:
+          type: {{map @root.contexts.mappings aggregateRoot.keyFieldDescriptor.className}}
+        in: path
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/{{namePascalCase}}'
+              examples:
+                1:
+                  value:
+                  {{#aggregateRoot.fieldDescriptors}}
+                    {{name}}: {{map @root.contexts.examples className}}
+                  {{/aggregateRoot.fieldDescriptors}}
+          description: Changed {{namePascalCase}}
+      operationId: Post {{namePascalCase}}
+      summary: Post {{namePascalCase}}        
   /{{namePlural}}/{id}:
     summary: Specific operation on {{namePlural}}
     get:
