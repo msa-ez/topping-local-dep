@@ -21,7 +21,7 @@ paths:
               {{/fieldDescriptors}}
             examples:
             {{#examples}}
-            {{when}}
+            {{#when}}
               {{@index}}:   
                 value:
                   {{value}}
@@ -35,7 +35,7 @@ paths:
                 $ref: '#/components/schemas/{{aggregate.namePascalCase}}'
               examples:
               {{#examples}}
-              {{then}}
+              {{#then}}
                 {{@index}}:   # Example 1
                   value:
                     {{value}}
