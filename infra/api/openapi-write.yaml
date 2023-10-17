@@ -41,7 +41,12 @@ paths:
           Example {{@index}}:   
         {{#when}}
             value:
-              {{this}}
+              {{#value}}
+              {{#jp @root.contexts.jsonPathForId}}
+                {{this}}
+              {{/jp}}
+              {{/value}}
+              
         {{/when}}
         {{/examples}}      
       responses:
@@ -81,6 +86,10 @@ paths:
 
     this.contexts.except = !(isExternalInvocation && isPostInvocation)
     this.contexts.command = this.target
+
+    if(!this.contexts.except){
+      this.contexts.jsonPathForId = "$." + this.contexts.command.aggregate.aggregateRoot.keyFieldDescriptor.name
+    }
 
     this.contexts.mappings = [
       {
