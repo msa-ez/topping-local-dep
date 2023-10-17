@@ -41,9 +41,7 @@ paths:
           Example {{@index}}:   
         {{#when}}
             value:
-            {{#each value}}
-              {{this}}  #choose one of these .. 
-            {{/each}}
+              {{this}}
         {{/when}}
         {{/examples}}      
       responses:
