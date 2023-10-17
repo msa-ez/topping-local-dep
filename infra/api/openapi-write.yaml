@@ -31,8 +31,15 @@ paths:
             {{/examples}}      
       parameters:
       - examples:
-          1:
-            value: 1
+        {{#examples}}
+          Example {{@index}}:   
+        {{#when}}
+            value:
+            {{#each value}}
+              {{this}}  #choose one of these .. 
+            {{/each}}
+        {{/when}}
+        {{/examples}}      
         name: id
         description: {{namePascalCase}} name
         schema:
