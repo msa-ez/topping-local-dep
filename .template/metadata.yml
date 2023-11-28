@@ -1,6 +1,6 @@
 name: Local Microservice Development Dependencies
 rating: 5
-imageUrl: https://github.com/kibum0405/topping-wijmo/assets/59447401/3cf4bb64-9128-4eae-8aba-7e70cb8b55fb
+imageUrl: https://github.com/msa-ez/template-spring-boot-3/assets/123912988/b224288b-a404-4122-a405-a5921ccffa25
 description: Local Microservice Development Dependencies including Kafka, Mockservers, API Gateway.
 depends:
 tags:
