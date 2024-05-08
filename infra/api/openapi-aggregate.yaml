@@ -1,7 +1,6 @@
 forEach: Relation
 fileName: openapi.yaml
 except: {{contexts.except}}
-ifDuplicated: merge
 ---
 openapi: 3.1.0
 info:
