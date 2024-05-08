@@ -3,7 +3,7 @@ fileName: openapi.yaml
 except: {{contexts.except}}
 ifDuplicated: merge
 ---
-openapi: 3.0.2
+openapi: 3.1.0
 info:
   title: {{target.aggregate.namePascalCase}}
   version: 0.0.1
