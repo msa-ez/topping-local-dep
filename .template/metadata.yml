@@ -3,6 +3,8 @@ rating: 5
 imageUrl: https://github.com/msa-ez/template-spring-boot-3/assets/123912988/b224288b-a404-4122-a405-a5921ccffa25
 description: Local Microservice Development Dependencies including Kafka, Mockservers, API Gateway.
 depends:
+  - spring-boot
+  - template-spring-boot
 tags:
   - Mock
   - Kafka
